@@ -14,12 +14,12 @@ COLOR =  "#888888"
 
 ICON_DIR = os.path.dirname(__file__)
 
-ANIMATION_RIGHT = [('%s/blocks/doodle1.png' % ICON_DIR)]
-ANIMATION_LEFT = [('%s/blocks/doodle.png' % ICON_DIR)]
-ANIMATION_JUMP_LEFT = [('%s/blocks/jj.png' % ICON_DIR, 0.1)]
-ANIMATION_JUMP_RIGHT = [('%s/blocks/jj.png' % ICON_DIR, 0.1)]
-ANIMATION_JUMP = [('%s/blocks/jj.png' % ICON_DIR, 0.1)]
-ANIMATION_STAY = [('%s/blocks/doodle.png' % ICON_DIR, 0.1)]
+ANIMATION_RIGHT = [('%s/data/doodle1.png' % ICON_DIR)]
+ANIMATION_LEFT = [('%s/data/doodle.png' % ICON_DIR)]
+ANIMATION_JUMP_LEFT = [('%s/data/jj.png' % ICON_DIR, 0.1)]
+ANIMATION_JUMP_RIGHT = [('%s/data/jj.png' % ICON_DIR, 0.1)]
+ANIMATION_JUMP = [('%s/data/jj.png' % ICON_DIR, 0.1)]
+ANIMATION_STAY = [('%s/data/doodle.png' % ICON_DIR, 0.1)]
 
 
 class Player(sprite.Sprite):  # класс игрока(персонажа)
@@ -126,7 +126,7 @@ class Player(sprite.Sprite):  # класс игрока(персонажа)
                 if isinstance(p, blocks.Stop):
                     try:
                         self.winner = True
-                        print("winner")
+                        self.life += 1
                         self.retry()
                     except Exception as e:
                         print(e)
