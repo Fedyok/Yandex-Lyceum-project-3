@@ -312,7 +312,7 @@ def game():  # основная функция игры
                 pygame.display.flip()
 
     records = []  # список для рекордов
-    points = 0  # переменная очков
+    points = 0   # переменная очков
     try:
         with open('records.txt') as f:
             for line in f:
@@ -411,12 +411,12 @@ def game():  # основная функция игры
                         entities.add(arrow)
                         arrow.push = True
 
-            info_str.fill(Color(45,80,40))
+            info_str.fill(Color(255, 255, 255))
             info_str.blit(life_font.render(u'Life: '\
                                            + str(hero.life)\
                                            + u'                     Score:'\
                                            + str(points),\
-                                           True, (210 ,120, 200)), (50, 5))
+                                           True, (210, 120, 200)), (50, 5))
 
             screen.blit(info_str, (0, 0))
             screen.blit(bg, (0, 30))
@@ -484,8 +484,8 @@ def game():  # основная функция игры
             f = open('records.txt', 'w')
             for i in records:
                 f.writelines(str(i) + '\n')
-            points = 0
             win_screen()
+            points = 0
         pygame.display.update()     # обновление и вывод всех изменений на экран
 
 dimon = pygame.sprite.Group()
