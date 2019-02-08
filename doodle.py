@@ -477,7 +477,7 @@ def game():  # основная функция игры
 
             end_screen("level%s.txt"%l)
         elif l == 3:
-            Points += 5000
+            points += 5000
             if points > min(records):
                 records[0] = points
             records.sort()
