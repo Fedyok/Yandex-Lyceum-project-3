@@ -14,7 +14,7 @@ class Platform(sprite.Sprite):  #класс боковых стенок
         sprite.Sprite.__init__(self)
         self.image = Surface((32, 32))
         self.image.fill(Color("green"))
-        self.image = image.load("%s/blocks/wall.png" % ICON_DIR)
+        self.image = image.load("%s/data/wall.png" % ICON_DIR)
         self.rect = Rect(x, y, 32, 32)
         
 
@@ -23,7 +23,7 @@ class Finish(Platform):  #класс платформ, по которым мы 
         sprite.Sprite.__init__(self)
         self.image = Surface((57, 15))
         self.image.fill(Color("#FF6262"))
-        self.image = image.load("%s/blocks/platform1.png" % ICON_DIR)
+        self.image = image.load("%s/data/platform1.png" % ICON_DIR)
         self.rect = Rect(x, y, 57, 15)
 
 
@@ -31,7 +31,7 @@ class Finish(Platform):  #класс платформ, по которым мы 
 class Stop(Platform):  # класс финиша
     def __init__(self, x, y):
         Platform.__init__(self, x, y)
-        self.image = image.load("%s/blocks/finish-flag.png" % ICON_DIR)
+        self.image = image.load("%s/data/finish-flag.png" % ICON_DIR)
 
 
 class Dimonster(sprite.Sprite):  # класс движущегося монстра
@@ -40,7 +40,7 @@ class Dimonster(sprite.Sprite):  # класс движущегося монст�
         self.image = Surface((32, 32))
         self.image.fill(Color("#FF6262"))
         self.rect = Rect(x, y, 32, 32)
-        self.image = image.load("%s/blocks/mmm.png" % ICON_DIR)
+        self.image = image.load("%s/data/mmm.png" % ICON_DIR)
         self.xvel = 1    # скорость перемещения.
         self.startX = x  # начальная позиция Х
         self.startY = y
@@ -61,7 +61,7 @@ class Arrow(sprite.Sprite):  # класс пули персонажа
         self.image = Surface((32, 32))
         self.image.fill(Color("#FF6262"))
         self.rect = Rect(x, y, 32, 32)
-        self.image = image.load("%s/blocks/arrow.png" % ICON_DIR)
+        self.image = image.load("%s/data/arrow.png" % ICON_DIR)
         self.startX = -10  # начальная позиция Х
         self.startY = -10
         self.max_len = 300  # максимальное расстояние, на которое она может лететь
