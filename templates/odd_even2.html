@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <title>Просмотр отзывов на фильм</title>
+</head>
+<body>
+<h1>Нажмите "Искать", чтобы увидеть все фильмы</h1>
+<h1>Можно искать фильмы по году их выпуска</h1>
+<form method="post" enctype="multipart/form-data">
+<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Год</span>
+  </div>
+
+    <input type="number" class="form-control col-md-5" name = "yearf" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+</div>
+<button type="submit" class="btn btn-outline-success" name = "Go" value = "a" >Искать</button>
+    <button type="submit" class="btn btn-danger" name = "Go" value = "b" >В профиль</button>
+    {% for film in films %}
+        <p>{{film[1]}}:  <b>{{film[2]}}</b>, <b>{{film[3]}}</b>, <b>{{film[4]}}</b> год <b>Рейтинг:</b> <b>{{rate}}</b></p>
+    {% endfor %}
+</body>
+</html>

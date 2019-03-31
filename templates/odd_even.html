@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <title>Просмотр отзывов на фильм</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm1">Название фильма</span>
+  </div>
+    <input type="text" class="form-control" name = "nf" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+
+
+    <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Год</span>
+  </div>
+
+    <input type="number" class="form-control" name = "yearf" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+</div>
+<button type="submit" class="btn btn-outline-success" name = "Go" value = "a" >Искать</button>
+    <button type="submit" class="btn btn-danger" name = "Go" value = "b" >В профиль</button>
+    <p>Средний рейтинг фильма: <b>{{rate}}</b></p>
+    {% for film in films %}
+        <p>{{film.nic}} says: <b>{{film.description}}</b></p>
+    {% endfor %}
+</body>
+</html>
